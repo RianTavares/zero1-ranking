@@ -5,7 +5,7 @@
     width: 100vw;
     height: 588px;
     background-color: var(--color-brand-primary);
-    background-image: url('../../assets/images/fellipe-menezes-bt-banner-mobile.png');
+    background-image: url('../../assets/images/fellipe-menezes-bt-banner-mobile-2.png');
     background-size: contain;
     background-position: bottom;
     background-position-x: center;
@@ -13,11 +13,10 @@
     
     @media #{$BREAKPOINT-TABLET-LAND} {
         height: 340px;
-        background-image: url('../../assets/images/fellipe-menezes-bt-banner.png');
+        background-image: url('../../assets/images/fellipe-menezes-bt-banner-2.png');
         background-size: cover;
-        background-position-x: unset;
         background-position-x: center;
-        background-position-y: center;
+        background-position-y: top;
     }
 }
   
@@ -41,8 +40,9 @@
         padding: 0;
         justify-content: flex-start;
         flex-direction: row;
+        padding: 0 var(--layout-padding) 0 var(--layout-padding);
     }
-  
+
     .textContainer {
         display: flex;
         flex-direction: column;
