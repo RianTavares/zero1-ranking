@@ -1,0 +1,43 @@
+.rankingZoom {
+    display: flex;
+    border: 1px solid #ECCCA2;
+    border-radius: 8px;
+    min-height: 72px;
+}
+
+.profilePicture {
+    width: 54px;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        object-fit: cover;
+    }
+}
+
+.name {
+    color: #000;
+}
+
+.textContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.position {
+    color: #FFF;
+    background: #1B6EB5;
+    height: 50%;
+    width: 30px;
+    padding: 4px;
+    text-align: center;
+}
+
+.name {
+    font-size: 12px;
+    height: 50%;
+    padding: 7px;
+}

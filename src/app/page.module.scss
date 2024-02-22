@@ -1,0 +1,180 @@
+@import '@/styles/breakpoints';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 1rem 0 1rem;
+  min-height: 100vh;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    padding: 6rem 16rem 0 16rem;
+  }
+}
+
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: 476px;
+  // margin-bottom: 128px;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    height: 340px;
+  }
+}
+
+.banner {
+  position: absolute;
+    width: 100vw;
+    height: fit-content;
+    background-color: #ECCCA2;
+    left: -1rem;
+    padding: 4rem 1rem 0 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: #1B6EB4;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    left: -16rem;
+    padding: 0 0 0 16rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .textContainer {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    
+    p {
+      font-family: Lato,Arial,Helvetica,sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #F3F3F3;
+      text-transform: uppercase;
+    }
+
+    img {
+      height: 42px;
+      width: 42px;
+    }
+  }
+
+  img {
+    height: 340px;
+    width: auto;
+  }
+}
+.bannerMobi {
+  display: block;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+   display: none;
+  }
+}
+.bannerDesk {
+  display: none;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    display: block;
+   }
+}
+
+.selectCategoryContainer {
+  width: 100vw;
+  padding: 32px 16px;
+  margin-bottom: 64px;
+  background-color: #ECCCA2;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    padding: 32px 16rem 32px 16rem;
+  }
+
+  div {
+    width: 100%;
+    // label {
+    //   color: #FFF;
+    // }
+
+    div {
+      // svg {
+      //   fill: #FFF;
+      // }
+
+      // fieldset {
+      //   border-color: rgba(255, 255, 255, 0.23);
+      // }
+    }
+  }
+}
+
+.footerContainer {
+  position: relative;
+  width: 100%;
+  height: 320px;
+}
+
+.footerBlue, .footerWhite, .footerYellow {
+  position: absolute;
+  bottom: 0;
+  left: -1rem;
+  width: 100vw;
+  
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    left: -16rem;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.footerBlue { z-index: 3; bottom: 0;}
+.footerWhite { z-index: 2; bottom: 15px;}
+.footerYellow { z-index: 1; bottom: 60px;}
+
+.copyrights {
+  z-index: 4;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 32px;
+  color: #FFF;
+  background-color: #1B6EB5;
+  width: 100vw;
+
+  left: -1rem;
+  
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    left: -16rem;
+  }
+}
+
+.firstFiveChampions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.userThumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userCell {
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px
+  }
+}
