@@ -5,92 +5,25 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem 1rem 0 1rem;
+  padding: 0 1rem 0 1rem;
   min-height: 100vh;
 
   @media #{$BREAKPOINT-TABLET-LAND} {
-    padding: 6rem 16rem 0 16rem;
+    padding: 6rem var(--layout-padding) 0 var(--layout-padding);
   }
-}
-
-.bannerContainer {
-  position: relative;
-  width: 100%;
-  height: 476px;
-  // margin-bottom: 128px;
-
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    height: 340px;
-  }
-}
-
-.banner {
-  position: absolute;
-    width: 100vw;
-    height: fit-content;
-    background-color: #ECCCA2;
-    left: -1rem;
-    padding: 4rem 1rem 0 1rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    background-color: #1B6EB4;
-
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    left: -16rem;
-    padding: 0 0 0 16rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .textContainer {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    
-    p {
-      font-family: Lato,Arial,Helvetica,sans-serif;
-      font-weight: bold;
-      font-size: 1.5rem;
-      color: #F3F3F3;
-      text-transform: uppercase;
-    }
-
-    img {
-      height: 42px;
-      width: 42px;
-    }
-  }
-
-  img {
-    height: 340px;
-    width: auto;
-  }
-}
-.bannerMobi {
-  display: block;
-
-  @media #{$BREAKPOINT-TABLET-LAND} {
-   display: none;
-  }
-}
-.bannerDesk {
-  display: none;
-
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    display: block;
-   }
 }
 
 .selectCategoryContainer {
   width: 100vw;
   padding: 32px 16px;
   margin-bottom: 64px;
-  background-color: #ECCCA2;
+  background-color: var(--color-brand-quaternary);
 
+  display: flex;
+  justify-content: center;
+  
   @media #{$BREAKPOINT-TABLET-LAND} {
-    padding: 32px 16rem 32px 16rem;
+    padding: 32px var(--layout-padding) 32px var(--layout-padding);
   }
 
   div {
@@ -124,7 +57,7 @@
   width: 100vw;
   
   @media #{$BREAKPOINT-TABLET-LAND} {
-    left: -16rem;
+    left:  var(--layout-padding-negative);
   }
 
   img {
@@ -146,13 +79,13 @@
   width: 100%;
   height: 32px;
   color: #FFF;
-  background-color: #1B6EB5;
+  background-color: var(--color-brand-primary);
   width: 100vw;
-
-  left: -1rem;
-  
+  left:  -1rem;
+  text-decoration: none;
+    
   @media #{$BREAKPOINT-TABLET-LAND} {
-    left: -16rem;
+    left:  var(--layout-padding-negative);
   }
 }
 
@@ -177,4 +110,8 @@
     align-items: center;
     gap: 8px
   }
+}
+
+.table, .select {
+  max-width: var(--max-layout-width);
 }
