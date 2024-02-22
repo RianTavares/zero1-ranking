@@ -21,9 +21,7 @@ import styles from './page.module.scss';
 import WaveBlue from '../assets/images/wave-blue.svg';
 import WaveWhite from '../assets/images/wave-white.svg';
 import WaveYellow from '../assets/images/wave-yellow.svg';
-import Logo from '../assets/images/logo-ball2.svg';
-import FellipeBanner from '../assets/images/fellipe-menezes-playing-banner.png';
-import FellipeBannerDesk from '../assets/images/fellipe-menezes-playing-banner-desk.png';
+import BannerTop from '@/components/BannerTop';
 import RankingZoom from '@/components/RankingZoom/RankingZoom';
 import { useTheme } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
@@ -186,19 +184,10 @@ export default function Home() {
         ))}
       </div>
     )}
-
-      <div className={styles.bannerContainer}>
-        <div className={styles.banner}>
-          <div className={styles.textContainer}>
-            <Image src={Logo} alt="logo" />
-            <p>Premium Beach Tennis Tour Ranking</p>
-          </div>
-          <Image className={styles.bannerMobi} src={FellipeBanner} alt="Fellipe Menezes Playing Beach Tennis" />
-          <Image className={styles.bannerDesk} src={FellipeBannerDesk} alt="Fellipe Menezes Playing Beach Tennis" />
-        </div>
-      </div>
+      <BannerTop />
       <div className={styles.selectCategoryContainer}>
-        <FormControl>
+        <div className={styles.select}>
+          <FormControl>
             <InputLabel id="group-select">Ranking por Grupos</InputLabel>
             <Select
               labelId="group-select"
@@ -208,14 +197,15 @@ export default function Home() {
               onChange={handleChange}
               inputProps={{MenuProps: {disableScrollLock: true}}}
             >
-            <MenuItem value={'Grupo das 18'}>Grupo das 18:00 Horas</MenuItem>
-            <MenuItem value={'Grupo das 19'}>Grupo das 19:00 Horas</MenuItem>
-            <MenuItem value={'Grupo das 20'}>Grupo das 20:00 Horas</MenuItem>
-            <MenuItem value={'Grupo das 21'}>Grupo das 21:00 Horas</MenuItem>
-          </Select>
-        </FormControl>
+              <MenuItem value={'Grupo das 18'}>Grupo das 18:00 Horas</MenuItem>
+              <MenuItem value={'Grupo das 19'}>Grupo das 19:00 Horas</MenuItem>
+              <MenuItem value={'Grupo das 20'}>Grupo das 20:00 Horas</MenuItem>
+              <MenuItem value={'Grupo das 21'}>Grupo das 21:00 Horas</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
       </div>
-      <TableContainer component={Paper} style={{ marginBottom: 128}}>
+      <TableContainer component={Paper} style={{ marginBottom: 128}} className={styles.table}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>

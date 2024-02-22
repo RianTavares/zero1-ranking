@@ -1,0 +1,92 @@
+@import '@/styles/breakpoints';
+
+.bannerContainer {
+    position: relative;
+    width: 100vw;
+    height: 588px;
+    background-color: var(--color-brand-primary);
+    background-image: url('../../assets/images/fellipe-menezes-bt-banner-mobile.png');
+    background-size: contain;
+    background-position: bottom;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        height: 340px;
+        background-image: url('../../assets/images/fellipe-menezes-bt-banner.png');
+        background-size: cover;
+        background-position-x: unset;
+        background-position-x: center;
+        background-position-y: center;
+    }
+}
+  
+.banner {
+    position: absolute;
+    width: 100vw;
+    height: fit-content;
+    padding: 4rem 1rem 0 1rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    background-color: transparent;
+  
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        max-width: var(--max-layout-width);
+        top: 30%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+  
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      
+        p {
+            font-family: var(--theme-font-primary);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #F3F3F3;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        img {
+            height: 5em;
+        }
+    }
+  
+    img {
+        height: 340px;
+        width: auto;
+    }
+}
+
+.bannerMobi {
+    display: block;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: none;
+    }
+}
+
+.bannerDesk {
+    display: none;
+
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        right: 0;
+        height: 340px;
+    }
+}
