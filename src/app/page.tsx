@@ -205,7 +205,7 @@ export default function Home() {
           </FormControl>
         </div>
       </div>
-      <TableContainer component={Paper} style={{ marginBottom: 128}} className={styles.table}>
+      <TableContainer component={Paper} style={{ marginBottom: isTabletLand ? 128 : 0}} className={styles.table}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -259,21 +259,23 @@ export default function Home() {
               </TableRow>
             )}
           </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TablePagination
-                rowsPerPageOptions={[10, 25, 50, { label: 'All', value: -1 }]}
-                colSpan={3}
-                count={players.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                labelRowsPerPage="Máx de itens:"
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-                ActionsComponent={TablePaginationActions}
-                />
-            </TableRow>
-          </TableFooter>
+          {players.length > 10 && (
+            <TableFooter>
+              <TableRow>
+                <TablePagination
+                  rowsPerPageOptions={[10, 25, 50, { label: 'All', value: -1 }]}
+                  colSpan={3}
+                  count={players.length}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  labelRowsPerPage="Máx de itens:"
+                  onPageChange={handleChangePage}
+                  onRowsPerPageChange={handleChangeRowsPerPage}
+                  ActionsComponent={TablePaginationActions}
+                  />
+              </TableRow>
+            </TableFooter>
+          )}
         </Table>
       </TableContainer>
 
