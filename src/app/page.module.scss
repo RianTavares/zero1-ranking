@@ -115,3 +115,18 @@
 .table, .select {
   max-width: var(--max-layout-width);
 }
+
+.userThumbContainer {
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.userNameContainer {
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    width: 55%;
+    text-align: left;
+  }
+}

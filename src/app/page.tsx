@@ -209,12 +209,12 @@ export default function Home() {
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell style={{ fontSize: 20 }}><strong>RANKING</strong></TableCell>
-              <TableCell align="center" style={{ fontSize: 20 }}><strong>NOME</strong></TableCell>
+              <TableCell><strong>RANKING</strong></TableCell>
+              <TableCell align="center"><strong>NOME</strong></TableCell>
               {isTabletLand && (
-                <TableCell align="center" style={{ fontSize: 20 }}><strong>TORNEIOS JOGADOS</strong></TableCell>
+                <TableCell align="center"><strong>TORNEIOS JOGADOS</strong></TableCell>
               )}
-              <TableCell align="center" style={{ fontSize: 20 }}><strong>PONTOS</strong></TableCell>
+              <TableCell align="center"><strong>PONTOS</strong></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -235,15 +235,12 @@ export default function Home() {
                   </TableCell>
                   <TableCell align="center">
                     <div className={styles.userCell}>
-                      {isTabletLand && (
-                        player.attributes.profile.data ? (
-                          <img className={styles.userThumb} src={player.attributes.profile.data.attributes.url} alt="Profile" />
-                        ) : (
-                          <Image className={styles.userThumb} src={NoUserImg} alt="Profile" width={48} height={48}/>
-                        )
-                      )}
-                        
-                      <p>{player.attributes.name}</p>
+                      <div className={styles.userThumbContainer}>
+                        <img className={styles.userThumb} src={player.attributes.profile.data.attributes.url} alt="Profile" />
+                      </div>
+                      <div className={styles.userNameContainer}>
+                        <p>{player.attributes.name}</p>
+                      </div>
                     </div>
                   </TableCell>
                   {isTabletLand && (
