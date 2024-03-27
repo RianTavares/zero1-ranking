@@ -1,6 +1,10 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import styles from './categorySelect.module.scss';
 
 export default function CategorySelect() {
+    const group = null;
+    const handleChange = () => {console.log('none')}
+    
     return (
         <div className={styles.select}>
             <FormControl>
