@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect } from 'react';
-import Image from 'next/image';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -17,12 +16,7 @@ import IconButton from '@mui/material/IconButton';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import styles from './page.module.scss';
-import WaveBlue from '../assets/images/wave-blue.svg';
-import WaveWhite from '../assets/images/wave-white.svg';
-import WaveYellow from '../assets/images/wave-yellow.svg';
-import BannerTop from '@/components/BannerTop';
-import RankingZoom from '@/components/RankingZoom/RankingZoom';
+import {BannerTop, Footer, RankingZoom} from '@/components';
 import { useTheme } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchWithRetry } from "@/utils/fetchWithRetry";
@@ -31,7 +25,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Box from '@mui/material/Box';
-import NoUserImg from '../assets/images/no-user.jpeg';
+import styles from './page.module.scss';
 
 interface Player {
   attributes: {
@@ -205,6 +199,7 @@ export default function Home() {
           </FormControl>
         </div>
       </div>
+
       <TableContainer component={Paper} style={{ marginBottom: isTabletLand ? 128 : 0}} className={styles.table}>
         <Table aria-label="simple table">
           <TableHead>
@@ -276,20 +271,7 @@ export default function Home() {
         </Table>
       </TableContainer>
 
-      <div className={styles.footerContainer}>
-        <div className={styles.footerBlue}>
-          <Image src={WaveBlue} alt="Wave Blue" />
-        </div>
-        <div className={styles.footerWhite}>
-          <Image src={WaveWhite} alt="Wave White" />
-        </div>
-        <div className={styles.footerYellow}>
-          <Image src={WaveYellow} alt="Wave Yellow" />
-        </div>
-        <div className={styles.copyrights}>
-          ©Copyright 2024 | Desenvolvido por <a href="https://www.codeduals.com/">Code Duals</a>
-        </div>
-      </div>
+      <Footer />
     </main>
   )
 }
