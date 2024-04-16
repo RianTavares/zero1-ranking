@@ -1,28 +1,49 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import React, { useEffect } from 'react';
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { useFilter } from '@/contexts/CategoryFilterContext';
 import styles from './categorySelect.module.scss';
 
-export default function CategorySelect() {
-    const group = null;
-    const handleChange = () => {console.log('none')}
+type OptionType = {
+    value: string;
+    label: string;
+};
+
+type CategorySelectProps = {
+    options: OptionType[];
+    initialValue: string;
+};
+
+export default function CategorySelect({ options, initialValue }: CategorySelectProps) {
+    const { selectedCategory, setSelectedCategory } = useFilter();
+
+    const handleChange = (event: SelectChangeEvent<string>) => {
+        setSelectedCategory(event.target.value);
+    };
+
+    useEffect(() => {
+        setSelectedCategory(initialValue);
+      }, [initialValue, setSelectedCategory]);
     
+
     return (
         <div className={styles.select}>
-            <FormControl>
-                <InputLabel id="group-select">Ranking por Grupos</InputLabel>
+            <FormControl fullWidth>
+                <InputLabel id="group-select-label">Ranking por Grupos</InputLabel>
                 <Select
-                labelId="group-select"
-                id="demo-simple-select"
-                value={group}
-                label="Ranking por Grupos"
-                onChange={handleChange}
-                inputProps={{MenuProps: {disableScrollLock: true}}}
+                    labelId="group-select-label"
+                    id="group-select"
+                    value={selectedCategory}
+                    label="Ranking por Grupos"
+                    onChange={handleChange}
+                    MenuProps={{ disableScrollLock: true }}
                 >
-                <MenuItem value={'Grupo das 18'}>Grupo das 18:00 Horas</MenuItem>
-                <MenuItem value={'Grupo das 19'}>Grupo das 19:00 Horas</MenuItem>
-                <MenuItem value={'Grupo das 20'}>Grupo das 20:00 Horas</MenuItem>
-                <MenuItem value={'Grupo das 21'}>Grupo das 21:00 Horas</MenuItem>
+                    {options.map((option) => (
+                        <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                        </MenuItem>
+                    ))}
                 </Select>
             </FormControl>
-        </div>  
-    )
+        </div>
+    );
 }

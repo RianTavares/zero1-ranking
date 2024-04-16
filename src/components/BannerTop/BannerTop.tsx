@@ -1,20 +1,27 @@
 import Image from 'next/image';
-import Logo from '../../assets/images/logo-fm-2.svg';
-import FellipeBanner from '../../assets/images/fellipe-menezes-playing-banner-2.png';
-import FellipeBannerDesk from '../../assets/images/fellipe-menezes-playing-banner-desk-2.png';
+import { useMediaQuery } from '@mui/material';
+import Logo from '../../assets/images/logo-zero1-full-color.webp';
 import styles from './bannerTop.module.scss';
 
-const RankingZoom = () => {
-    return (
-        <div className={styles.bannerContainer}>
+interface BannerTopProps {
+    title: string;
+    mobileImageSrc: string;
+    desktopImageSrc: string;
+}
+
+const BannerTop: React.FC<BannerTopProps> = ({ title, mobileImageSrc, desktopImageSrc }) => {
+  const isDesktop = useMediaQuery('(min-width: 1280px)');
+  const imageSrc = isDesktop ? desktopImageSrc : mobileImageSrc;
+  return (
+        <div className={styles.bannerContainer} style={{ backgroundImage: `url(${imageSrc})` }}>
             <div className={styles.banner}>
                 <div className={styles.textContainer}>
                     <Image src={Logo} alt="logo" />
-                    <p>Premium Beach Tennis Tour Ranking</p>
+                    <p>{title}</p>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default RankingZoom;
+export default BannerTop;

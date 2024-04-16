@@ -1,0 +1,37 @@
+@import '@/styles/breakpoints';
+
+.table, .select {
+    max-width: var(--max-layout-width);
+}
+
+.userCell {
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px
+    }
+}
+
+.userThumbContainer {
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        width: 45%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+
+.userThumb {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userNameContainer {
+    @media #{$BREAKPOINT-TABLET-LAND} {
+        width: 55%;
+        text-align: left;
+    }
+}

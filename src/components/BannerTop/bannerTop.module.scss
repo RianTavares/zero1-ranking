@@ -4,8 +4,8 @@
     position: relative;
     width: 100vw;
     height: 588px;
-    background-color: var(--color-brand-primary);
-    background-image: url('../../assets/images/fellipe-menezes-bt-banner-mobile-2.png');
+    background-color: transparent;
+    // background-image: url('../../assets/images/zero1-arena-banner-top-mobile-smooth-blue.png');
     background-size: contain;
     background-position: bottom;
     background-position-x: center;
@@ -13,7 +13,7 @@
     
     @media #{$BREAKPOINT-TABLET-LAND} {
         height: 340px;
-        background-image: url('../../assets/images/fellipe-menezes-bt-banner-2.png');
+        // background-image: url('../../assets/images/zero1-brand-beach-tennis-banner.png');
         background-size: cover;
         background-position-x: center;
         background-position-y: top;
@@ -53,7 +53,7 @@
             font-family: var(--theme-font-primary);
             font-weight: bold;
             font-size: 1.5rem;
-            color: #F3F3F3;
+            color: var(--primary-color);
             text-transform: uppercase;
             text-align: center;
         }

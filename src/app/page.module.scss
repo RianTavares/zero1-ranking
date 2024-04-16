@@ -1,74 +1,86 @@
 @import '@/styles/breakpoints';
 
-.main {
+.enterPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+}
+
+.buttonsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem 0 1rem;
-  min-height: 100vh;
+
+  width: 100%;
+  height: 100%;
 
   @media #{$BREAKPOINT-TABLET-LAND} {
-    padding: 6rem var(--layout-padding) 0 var(--layout-padding);
+    flex-direction: row;
   }
 }
 
-.selectCategoryContainer {
-  width: 100vw;
-  padding: 32px 16px;
-  margin-bottom: 64px;
-  background-color: var(--color-brand-quaternary);
+.categoryButton {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 144px;
+  height: 144px;
+  border: 0;
+}
+
+.categoryButton, .overlay {
+  border-radius: 50%; 
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1px);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.beachTennis {
+  background-image: url('../assets/images/beachtennis.webp');
+}
+
+.footvolley {
+  background-image: url('../assets/images/futevolei.webp');
+}
+
+.categoryText {
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 900;
+  z-index: 3;
+  padding: 24px;
+}
+
+.cardButton {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
-  
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    padding: 32px var(--layout-padding) 32px var(--layout-padding);
-  }
-
-  div {
-    width: 100%;
-  }
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.firstFiveChampions {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 80px;
+.cardButton:hover {
+  background-color: var(--color-brand-tertiary);
 }
 
-.userThumb {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-.userCell {
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px
-  }
-}
-
-.table, .select {
-  max-width: var(--max-layout-width);
-}
-
-.userThumbContainer {
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    width: 45%;
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-.userNameContainer {
-  @media #{$BREAKPOINT-TABLET-LAND} {
-    width: 55%;
-    text-align: left;
-  }
+.textContainer {
+  text-align: center;
 }

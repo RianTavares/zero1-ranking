@@ -1,0 +1,43 @@
+@import '@/styles/breakpoints';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+  min-height: 100vh;
+
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    padding: 6rem var(--layout-padding) 0 var(--layout-padding);
+  }
+}
+
+.selectCategoryContainer {
+  width: 100vw;
+  padding: 32px 16px;
+  margin-bottom: 64px;
+  background-color: var(--color-brand-quaternary);
+
+  display: flex;
+  justify-content: center;
+  
+  @media #{$BREAKPOINT-TABLET-LAND} {
+    padding: 32px var(--layout-padding) 32px var(--layout-padding);
+  }
+
+  div {
+    width: 100%;
+  }
+}
+
+.firstFiveChampions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.select {
+  max-width: var(--max-layout-width);
+}
