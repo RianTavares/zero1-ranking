@@ -10,8 +10,8 @@ interface BannerTopProps {
 }
 
 const BannerTop: React.FC<BannerTopProps> = ({ title, mobileImageSrc, desktopImageSrc }) => {
-  const isDesktop = useMediaQuery('(min-width: 1280px)');
-  const imageSrc = isDesktop ? desktopImageSrc : mobileImageSrc;
+  const isTabletLand = useMediaQuery('(min-width: 975px)');
+  const imageSrc = isTabletLand ? desktopImageSrc : mobileImageSrc;
   return (
         <div className={styles.bannerContainer} style={{ backgroundImage: `url(${imageSrc})` }}>
             <div className={styles.banner}>

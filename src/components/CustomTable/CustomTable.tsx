@@ -12,6 +12,7 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import defaultUserImg from '@/assets/images/no-user.jpeg';
 import styles from './customTable.module.scss';
 
 type Player = {
@@ -158,7 +159,7 @@ const CustomTable: React.FC<CustomTableProps> = ({
                 <TableCell align="center">
                     <div className={styles.userCell}>
                     <div className={styles.userThumbContainer}>
-                        <img className={styles.userThumb} src={player.attributes.profile.data.attributes.url} alt="Profile" />
+                        <img className={styles.userThumb} src={player.attributes.profile?.data?.attributes?.url ?? defaultUserImg.src} alt="Profile" />
                     </div>
                     <div className={styles.userNameContainer}>
                         <p>{player.attributes.name}</p>
@@ -166,9 +167,9 @@ const CustomTable: React.FC<CustomTableProps> = ({
                     </div>
                 </TableCell>
                 {isTabletLand && (
-                    <TableCell align="center">{player.attributes.tournaments}</TableCell>
+                    <TableCell align="center">{player.attributes.tournaments ?? 0}</TableCell>
                 )}
-                <TableCell align="center">{player.attributes.points}</TableCell>
+                <TableCell align="center">{player.attributes.points ?? 0}</TableCell>
                 </TableRow>
             ))
             )}
